@@ -81,6 +81,7 @@
                         <td class="cell">[[ item.labels.connector ]]</td>
                         <td class="cell">[[ item.labels.manga ]]</td>
                         <td class="cell">[[ item.labels.chapter ]]</td>
+                        <td class="fa-fw"><i class="fa fa-times-circle"></i></td>
                         <td class="progress" style$="background: linear-gradient(90deg, var(--job-list-progress-color) [[ item.progress ]]%, var(--job-list-progress-background-color) 0%);"></td>
                     </tr>
                 </template>
@@ -197,10 +198,11 @@
             }
 
             /**
-             * 
+             *
              */
             onDownloadStatusUpdated( e ) {
                 let job = e.detail;
+                console.log(job);
                 let index = this.jobList.indexOf( job );
                 if( index > -1 )  {
                     // force an UI update of the changed job
